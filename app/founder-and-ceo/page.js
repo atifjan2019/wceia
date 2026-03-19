@@ -24,7 +24,7 @@ export default function FounderAndCEO() {
       <main>
 
         {/* ── Hero ── */}
-        <section className="relative h-64 md:h-80 flex items-center justify-center overflow-hidden">
+        <section className="relative flex items-center justify-center overflow-hidden" style={{ height: "50vh" }}>
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: "url('/founderhero.jpg')" }}
@@ -183,27 +183,24 @@ export default function FounderAndCEO() {
         </section>
 
         {/* ── Quote ── */}
-        <section className="py-14 bg-gray-50">
+        <section className="py-20" style={{ backgroundColor: "#1E3B8A" }}>
           <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
             <div className="flex flex-col md:flex-row items-center gap-12">
 
               {/* Quote text */}
               <div className="flex-1">
-                <div className="flex items-start gap-4">
-                  <span className="text-6xl leading-none font-serif shrink-0" style={{ color: "#1E3B8A" }}>&ldquo;&rdquo;</span>
-                  <div>
-                    <p className="text-gray-800 text-xl md:text-2xl font-semibold italic leading-snug mb-4">
-                      &ldquo;Whip up your culture and gain knowledge&rdquo;
-                    </p>
-                    <p className="text-gray-500 text-sm">Dr. Shahida Khanom</p>
-                    <p className="text-gray-400 text-xs">Founder &amp; CEO, WCEI</p>
-                  </div>
-                </div>
+                <div className="text-7xl font-serif leading-none mb-4" style={{ color: "#EF8B1D" }}>&ldquo;</div>
+                <p className="text-white text-2xl md:text-3xl font-semibold italic leading-snug mb-6">
+                  Whip up your culture and gain knowledge
+                </p>
+                <div className="w-12 h-1 mb-5 rounded" style={{ backgroundColor: "#EF8B1D" }} />
+                <p className="text-white/80 text-base font-medium">Dr. Shahida Khanom</p>
+                <p className="text-white/50 text-sm mt-1">Founder &amp; CEO, WCEI</p>
               </div>
 
               {/* Portrait card */}
-              <div className="shrink-0 rounded-2xl p-6 flex items-center justify-center" style={{ backgroundColor: "#EF8B1D" }}>
-                <div className="bg-white rounded-xl overflow-hidden shadow-lg" style={{ width: "180px", height: "200px" }}>
+              <div className="shrink-0 rounded-3xl p-6 flex items-center justify-center" style={{ backgroundColor: "#EF8B1D" }}>
+                <div className="bg-white rounded-2xl overflow-hidden shadow-xl" style={{ width: "200px", height: "230px" }}>
                   <img
                     src="/ceo.png"
                     alt="Dr. Shahida Khanom"
