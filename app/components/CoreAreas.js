@@ -13,7 +13,7 @@ export default function CoreAreas() {
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
 
           {/* Image — left, smaller */}
-          <div className="w-full lg:w-[38%] shrink-0">
+          <div className="w-full lg:flex-1 shrink-0">
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <img
                 src="/coreareas.png"
@@ -25,10 +25,10 @@ export default function CoreAreas() {
 
           {/* Content — right */}
           <div className="flex-1">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent mb-5 leading-tight">
+            <h2 className="text-[50px] font-semibold leading-[60px] text-accent mb-5">
               Our Core Areas of Impact
             </h2>
-            <p className="text-white/80 leading-relaxed mb-7 text-base">
+            <p className="text-white leading-[1.6] mb-7 text-lg font-normal">
               At WCEI, we go beyond aid to drive real transformation through education, cultural
               empowerment, academic mentorship, and sustainable development models. Our work is
               designed to build leadership, independence, and dignity for women and underserved
@@ -42,12 +42,12 @@ export default function CoreAreas() {
                     className="flex items-start gap-3 group"
                   >
                     {/* Checkmark icon */}
-                    <span className="mt-0.5 shrink-0 w-5 h-5 rounded-sm flex items-center justify-center" style={{ backgroundColor: "#1a5f9e" }}>
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#EF8B1D" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                    <span className="mt-0.5 shrink-0 w-5 h-5 rounded-sm flex items-center justify-center" style={{ backgroundColor: "#EF8B1D" }}>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
                     </span>
-                    <span className="text-white/90 text-sm leading-snug group-hover:text-accent transition-colors">
+                    <span className="text-white text-lg leading-snug group-hover:text-accent transition-colors font-normal">
                       {item.label}
                     </span>
                   </a>
