@@ -5,4 +5,5 @@
   --color-primary-dark: #152c6b;
   --color-accent: #EF8B1D;
   --color-accent-hover: #d97a12;
+  --font-sans: var(--font-barlow), sans-serif;
 }
