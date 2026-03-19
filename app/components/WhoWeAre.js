@@ -4,7 +4,7 @@ export default function WhoWeAre() {
   return (
     <section id="AboutUs" className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Left — Text */}
           <div>
@@ -44,7 +44,7 @@ export default function WhoWeAre() {
             </div>
 
             {/* CEO Bio Card — overlaid at bottom right */}
-            <div className="absolute bottom-0 right-0 w-[260px] bg-primary rounded-xl p-5 shadow-2xl">
+            <div className="absolute bottom-0 left-0 w-[260px] bg-primary rounded-xl p-5 shadow-2xl">
               <p className="text-white/90 text-xs leading-relaxed mb-4">
                 Shahida Khanom, PhD was born and brought up in Bangladesh. She holds a PhD degree
                 in Tourism and Cultural Heritage from Griffith University, Australia.
