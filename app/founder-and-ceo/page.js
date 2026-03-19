@@ -183,19 +183,19 @@ export default function FounderAndCEO() {
         </section>
 
         {/* ── Quote ── */}
-        <section className="py-20" style={{ backgroundColor: "#1E3B8A" }}>
+        <section className="py-20 bg-gray-50">
           <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
             <div className="flex flex-col md:flex-row items-center gap-12">
 
               {/* Quote text */}
               <div className="flex-1">
                 <div className="text-7xl font-serif leading-none mb-4" style={{ color: "#EF8B1D" }}>&ldquo;</div>
-                <p className="text-white text-2xl md:text-3xl font-semibold italic leading-snug mb-6">
+                <p className="text-gray-800 text-2xl md:text-3xl font-semibold italic leading-snug mb-6">
                   Whip up your culture and gain knowledge
                 </p>
                 <div className="w-12 h-1 mb-5 rounded" style={{ backgroundColor: "#EF8B1D" }} />
-                <p className="text-white/80 text-base font-medium">Dr. Shahida Khanom</p>
-                <p className="text-white/50 text-sm mt-1">Founder &amp; CEO, WCEI</p>
+                <p className="text-gray-700 text-base font-medium">Dr. Shahida Khanom</p>
+                <p className="text-gray-400 text-sm mt-1">Founder &amp; CEO, WCEI</p>
               </div>
 
               {/* Portrait card */}
