@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function WhoWeAre() {
   return (
     <section id="AboutUs" className="py-16 md:py-24 bg-white">
-      <div className="w-full px-4 sm:px-8 lg:px-16">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Left — Text */}

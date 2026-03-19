@@ -142,7 +142,7 @@ export default function Navbar() {
         scrolled ? "py-2" : "pt-5"
       }`}
     >
-      <div className="w-full px-4 sm:px-8">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8">
         {/* Pill */}
         <div
           className={`rounded-full px-4 flex items-center justify-between h-14 transition-all duration-300 ${

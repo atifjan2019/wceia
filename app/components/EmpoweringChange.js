@@ -36,7 +36,7 @@ const values = [
 export default function EmpoweringChange() {
   return (
     <section id="get-involved" className="py-16 md:py-24 bg-white">
-      <div className="w-full px-4 sm:px-8 lg:px-16">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
         <div className="text-center mb-14 max-w-3xl mx-auto">
           <p className="text-accent font-semibold text-sm tracking-widest uppercase mb-3">
             Our Values

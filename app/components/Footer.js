@@ -15,7 +15,7 @@ const quickLinks = [
 export default function Footer() {
   return (
     <footer className="bg-primary text-white">
-      <div className="w-full px-4 sm:px-8 lg:px-16 py-14">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
@@ -99,7 +99,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
-        <div className="w-full px-4 sm:px-8 lg:px-16 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-white/50 text-xs">WCEIA International 2025</p>
           <p className="text-white/40 text-xs">
             Design &amp; Developed By:{" "}

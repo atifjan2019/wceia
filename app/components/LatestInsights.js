@@ -36,7 +36,7 @@ const articles = [
 export default function LatestInsights() {
   return (
     <section id="resources" className="py-16 md:py-24 bg-gray-50">
-      <div className="w-full px-4 sm:px-8 lg:px-16">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-12 gap-4">
           <div>
             <p className="text-accent font-semibold text-sm tracking-widest uppercase mb-2">
