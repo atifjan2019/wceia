@@ -10,10 +10,10 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-primary/65" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center pt-20">
-        <p className="text-accent font-semibold text-sm md:text-base tracking-widest uppercase mb-4">
-          Transforming Lives
-        </p>
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center pt-24">
+        <span className="inline-block border border-white/60 text-white text-sm px-5 py-1.5 rounded-full mb-6">
+          Empowerment
+        </span>
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold text-white leading-tight mb-6">
           Women Cultural Empowerment{" "}
           <span className="text-accent">International</span>

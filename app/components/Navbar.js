@@ -89,17 +89,27 @@ function DropdownItem({ item }) {
     >
       <Link
         href={item.href}
-        className="flex items-center gap-1 text-white/90 hover:text-white px-3 xl:px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-md hover:bg-white/10 whitespace-nowrap"
+        className="flex items-center gap-1 text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap rounded-md hover:bg-white/10"
       >
         {item.label}
         {item.children && (
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}>
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          >
             <polyline points="6 9 12 15 18 9" />
           </svg>
         )}
       </Link>
+
       {item.children && open && (
-        <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 z-50 py-1 overflow-hidden">
+        <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 z-50 py-1 overflow-hidden">
           {item.children.map((child) => (
             <Link
               key={child.label}
@@ -120,89 +130,94 @@ export default function Navbar() {
   const [mobileExpanded, setMobileExpanded] = useState(null);
 
   return (
-    <nav className="bg-primary fixed top-0 left-0 w-full z-50 shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+    <header className="absolute top-0 left-0 w-full z-50 pt-5 px-4">
+      {/* Pill navbar */}
+      <div className="max-w-6xl mx-auto">
+        <div className="bg-primary rounded-full px-4 pr-2 flex items-center justify-between h-14 shadow-xl">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 shrink-0">
+          <Link href="/" className="flex items-center shrink-0 pl-1">
             <Image
               src="/logo.png"
               alt="WCEIA Logo"
-              width={48}
-              height={48}
-              className="w-10 h-10 md:w-12 md:h-12 object-contain"
+              width={44}
+              height={44}
+              className="w-10 h-10 object-contain"
             />
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-0.5">
+          {/* Desktop Nav — centered */}
+          <div className="hidden lg:flex items-center gap-0.5 flex-1 justify-center">
             {navItems.map((item) => (
               <DropdownItem key={item.label} item={item} />
             ))}
-            <Link
-              href="/involved"
-              className="ml-3 bg-accent hover:bg-accent-hover text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 whitespace-nowrap"
-            >
-              Get Involved
-            </Link>
           </div>
 
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition-colors"
+            className="lg:hidden text-white p-2 rounded-full hover:bg-white/10 transition-colors ml-auto"
             aria-label="Toggle menu"
           >
             {mobileOpen ? (
-              <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+              <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
             ) : (
-              <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
+              <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" />
+              </svg>
             )}
           </button>
         </div>
-      </div>
 
-      {/* Mobile Menu */}
-      <div className={`lg:hidden overflow-hidden transition-all duration-300 ${mobileOpen ? "max-h-screen" : "max-h-0"}`}>
-        <div className="bg-primary-dark px-4 py-3 space-y-1 border-t border-white/10">
-          {navItems.map((item, i) => (
-            <div key={item.label}>
-              <button
-                onClick={() => setMobileExpanded(mobileExpanded === i ? null : i)}
-                className="w-full flex items-center justify-between text-white/80 hover:text-white hover:bg-white/10 px-3 py-2.5 rounded-md text-sm font-medium transition-colors"
-              >
-                {item.label}
-                {item.children && (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className={`transition-transform ${mobileExpanded === i ? "rotate-180" : ""}`}>
-                    <polyline points="6 9 12 15 18 9" />
-                  </svg>
-                )}
-              </button>
-              {item.children && mobileExpanded === i && (
-                <div className="ml-4 mt-1 space-y-1 border-l-2 border-accent pl-3">
-                  {item.children.map((child) => (
-                    <Link
-                      key={child.label}
-                      href={child.href}
-                      onClick={() => setMobileOpen(false)}
-                      className="block text-white/60 hover:text-white py-1.5 text-sm transition-colors"
+        {/* Mobile Menu */}
+        <div
+          className={`lg:hidden overflow-hidden transition-all duration-300 mt-2 ${
+            mobileOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="bg-primary rounded-2xl px-4 py-3 space-y-1 shadow-xl">
+            {navItems.map((item, i) => (
+              <div key={item.label}>
+                <button
+                  onClick={() => setMobileExpanded(mobileExpanded === i ? null : i)}
+                  className="w-full flex items-center justify-between text-white/80 hover:text-white hover:bg-white/10 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors"
+                >
+                  {item.label}
+                  {item.children && (
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      className={`transition-transform ${mobileExpanded === i ? "rotate-180" : ""}`}
                     >
-                      {child.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-          <Link
-            href="/involved"
-            onClick={() => setMobileOpen(false)}
-            className="block text-center bg-accent hover:bg-accent-hover text-white px-5 py-2.5 rounded-full text-sm font-semibold mt-3 transition-all"
-          >
-            Get Involved
-          </Link>
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  )}
+                </button>
+                {item.children && mobileExpanded === i && (
+                  <div className="ml-4 mt-1 space-y-1 border-l-2 border-accent pl-3">
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.label}
+                        href={child.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="block text-white/60 hover:text-white py-1.5 text-sm transition-colors"
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </nav>
+    </header>
   );
 }
