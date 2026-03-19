@@ -123,10 +123,10 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-white/50 text-xs">&copy; WCEIA International 2025. All rights reserved.</p>
-          <p className="text-white/40 text-xs">
+          <p className="text-white text-xs">&copy; WCEIA International 2025. All rights reserved.</p>
+          <p className="text-white text-xs">
             Design &amp; Developed By:{" "}
-            <a href="https://webspires.com.pk" target="_blank" rel="noreferrer" className="hover:text-white/70 transition-colors">
+            <a href="https://webspires.com.pk" target="_blank" rel="noreferrer" className="font-bold hover:text-white/70 transition-colors">
               Webspires Pvt Ltd
             </a>
           </p>

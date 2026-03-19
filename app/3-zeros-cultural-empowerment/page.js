@@ -68,7 +68,7 @@ export default function ThreeZeros() {
 
         {/* ── Nobel Laureate Intro ── */}
         <section className="py-20">
-          <div className="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-12">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
             <div className="flex flex-col lg:flex-row gap-12 items-start">
               <div className="flex-1">
                 <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: "#EF8B1D" }}>
@@ -104,7 +104,7 @@ export default function ThreeZeros() {
 
         {/* ── Rethinking Poverty Quotes ── */}
         <section className="py-20" style={{ backgroundColor: "#f8f7f4" }}>
-          <div className="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-12">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
             <div className="text-center mb-14">
               <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: "#EF8B1D" }}>
                 Words of Inspiration
@@ -133,7 +133,7 @@ export default function ThreeZeros() {
 
         {/* ── Cultural Empowerment Section ── */}
         <section className="py-20">
-          <div className="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-12">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
             <div className="mb-10">
               <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: "#EF8B1D" }}>
                 Professor Yunus&apos; Vision on Cultural Empowerment
@@ -189,7 +189,7 @@ export default function ThreeZeros() {
 
         {/* ── Advancing Three Zero ── */}
         <section className="py-20" style={{ backgroundColor: "#f8f7f4" }}>
-          <div className="max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-12">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
             <div className="flex flex-col lg:flex-row gap-12 items-start">
               <div className="flex-1">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight" style={{ color: "#1E3B8A" }}>
