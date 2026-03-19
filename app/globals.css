@@ -7,3 +7,7 @@
   --color-accent-hover: #d97a12;
   --font-sans: var(--font-barlow), sans-serif;
 }
+
+html {
+  font-size: 18px;
+}

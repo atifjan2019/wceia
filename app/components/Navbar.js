@@ -9,7 +9,7 @@ const navItems = [
     href: "/#AboutUs",
     children: [
       { label: "About Us", href: "/#AboutUs" },
-      { label: "Founder and CEO", href: "/founder-and-ceo-2/" },
+      { label: "Founder and CEO", href: "/founder-and-ceo" },
       { label: "Leading Team", href: "/our-team/#team" },
       { label: "Archives & Gallery", href: "/archives/" },
     ],
@@ -108,16 +108,20 @@ function DropdownItem({ item, scrolled }) {
       </Link>
 
       {item.children && open && (
-        <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 z-50 py-1 overflow-hidden">
-          {item.children.map((child) => (
-            <Link
-              key={child.label}
-              href={child.href}
-              className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary hover:text-white transition-colors duration-150"
-            >
-              {child.label}
-            </Link>
-          ))}
+        <div className="absolute top-full left-0 w-64 z-50">
+          {/* transparent bridge so mouse doesn't leave hover zone */}
+          <div className="h-3 w-full" />
+          <div className="bg-white rounded-xl shadow-2xl border border-gray-100 py-1 overflow-hidden">
+            {item.children.map((child) => (
+              <Link
+                key={child.label}
+                href={child.href}
+                className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary hover:text-white transition-colors duration-150"
+              >
+                {child.label}
+              </Link>
+            ))}
+          </div>
         </div>
       )}
     </div>
@@ -138,18 +142,16 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "py-2" : "pt-5"
-      }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "py-2" : "pt-5"
+        }`}
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8">
         {/* Pill */}
         <div
-          className={`rounded-full px-4 flex items-center justify-between h-14 transition-all duration-300 ${
-            scrolled
+          className={`rounded-full px-4 flex items-center justify-between h-14 transition-all duration-300 ${scrolled
               ? "bg-white border border-gray-200 shadow-sm"
               : "bg-primary shadow-xl"
-          }`}
+            }`}
         >
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0">
@@ -172,9 +174,8 @@ export default function Navbar() {
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`lg:hidden p-2 rounded-full transition-colors ml-auto ${
-              scrolled ? "text-gray-700 hover:bg-gray-100" : "text-white hover:bg-white/10"
-            }`}
+            className={`lg:hidden p-2 rounded-full transition-colors ml-auto ${scrolled ? "text-gray-700 hover:bg-gray-100" : "text-white hover:bg-white/10"
+              }`}
             aria-label="Toggle menu"
           >
             {mobileOpen ? (
@@ -191,20 +192,18 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-300 mt-2 ${
-            mobileOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-          }`}
+          className={`lg:hidden overflow-hidden transition-all duration-300 mt-2 ${mobileOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+            }`}
         >
           <div className={`rounded-2xl px-4 py-3 space-y-1 shadow-xl ${scrolled ? "bg-white" : "bg-primary"}`}>
             {navItems.map((item, i) => (
               <div key={item.label}>
                 <button
                   onClick={() => setMobileExpanded(mobileExpanded === i ? null : i)}
-                  className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${
-                    scrolled
+                  className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${scrolled
                       ? "text-gray-700 hover:bg-gray-100"
                       : "text-white/80 hover:text-white hover:bg-white/10"
-                  }`}
+                    }`}
                 >
                   {item.label}
                   {item.children && (

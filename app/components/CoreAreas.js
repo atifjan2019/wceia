@@ -25,7 +25,7 @@ export default function CoreAreas() {
 
           {/* Content — right */}
           <div className="flex-1">
-            <h2 className="text-[50px] font-semibold leading-[60px] text-accent mb-5">
+            <h2 className="text-3xl md:text-4xl font-bold text-accent mb-5">
               Our Core Areas of Impact
             </h2>
             <p className="text-white leading-[1.6] mb-7 text-lg font-normal">

@@ -3,33 +3,19 @@ const values = [
     title: "The Instinct",
     description:
       "We grow up seeing that our mother is the nuclear and primary caregiver of the family. By nature, and in practice mother has a strong influence on kids compared to the father to be a empowerment change maker.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-      </svg>
-    ),
+    image: "/intinct.png",
   },
   {
     title: "Reciprocity",
     description:
       "Cultural empowerment through mutual support is central to our values. We focus on inclusion for those who need it most and aim to strengthen reciprocal norms that guide benefit to all.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 1l4 4-4 4" /><path d="M3 11V9a4 4 0 014-4h14" />
-        <path d="M7 23l-4-4 4-4" /><path d="M21 13v2a4 4 0 01-4 4H3" />
-      </svg>
-    ),
+    image: "/Reciprocity.jpg",
   },
   {
     title: "Advocacy",
     description:
       "WCEI will advocate for cultural empowerment aligned with SDG 5, working with the United Nations, key organizations, and local communities to advance meaningful and inclusive growth.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
-        <polyline points="22 4 12 14.01 9 11.01" />
-      </svg>
-    ),
+    image: "/Advocacy.jpg",
   },
 ];
 
@@ -58,18 +44,15 @@ export default function EmpoweringChange() {
               key={index}
               className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group border border-gray-100"
             >
-              <div className="h-52 overflow-hidden">
+              <div className="w-full h-52 overflow-hidden">
                 <img
-                  src="/about-home.jpg"
+                  src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="p-6">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
-                  {item.icon}
-                </div>
-                <h3 className="font-bold text-gray-800 text-xl mb-3">{item.title}</h3>
+              <div className="p-6 text-center">
+                <h3 className="font-bold text-xl mb-3" style={{ color: "#EF8B1D" }}>{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
               </div>
             </div>
