@@ -68,7 +68,7 @@ const navItems = [
   },
 ];
 
-function DropdownItem({ item }) {
+function DropdownItem({ item, scrolled }) {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
 
@@ -80,6 +80,10 @@ function DropdownItem({ item }) {
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
+  const textClass = scrolled
+    ? "text-gray-700 hover:text-primary"
+    : "text-white/90 hover:text-white";
+
   return (
     <div
       ref={ref}
@@ -89,18 +93,13 @@ function DropdownItem({ item }) {
     >
       <Link
         href={item.href}
-        className="flex items-center gap-1 text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap rounded-md hover:bg-white/10"
+        className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap rounded-md hover:bg-black/5 ${textClass}`}
       >
         {item.label}
         {item.children && (
           <svg
-            width="12"
-            height="12"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
+            width="12" height="12" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"
             className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}
           >
             <polyline points="6 9 12 15 18 9" />
@@ -128,12 +127,30 @@ function DropdownItem({ item }) {
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const heroHeight = window.innerHeight * 0.75;
+    const onScroll = () => setScrolled(window.scrollY > heroHeight);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="absolute top-0 left-0 w-full z-50 pt-5 px-4">
-      {/* Pill navbar */}
-      <div className="max-w-6xl mx-auto">
-        <div className="bg-primary rounded-full px-4 pr-2 flex items-center justify-between h-14 shadow-xl">
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled ? "py-2" : "pt-5"
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-4">
+        {/* Pill */}
+        <div
+          className={`rounded-full px-3 flex items-center justify-between h-14 transition-all duration-300 ${
+            scrolled
+              ? "bg-white shadow-lg shadow-black/10"
+              : "bg-primary shadow-xl"
+          }`}
+        >
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0 pl-1">
             <Image
@@ -145,17 +162,19 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Desktop Nav — centered */}
-          <div className="hidden lg:flex items-center gap-0.5 flex-1 justify-center">
+          {/* Desktop Nav */}
+          <div className="hidden lg:flex items-center gap-0 flex-1 justify-center">
             {navItems.map((item) => (
-              <DropdownItem key={item.label} item={item} />
+              <DropdownItem key={item.label} item={item} scrolled={scrolled} />
             ))}
           </div>
 
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden text-white p-2 rounded-full hover:bg-white/10 transition-colors ml-auto"
+            className={`lg:hidden p-2 rounded-full transition-colors ml-auto ${
+              scrolled ? "text-gray-700 hover:bg-gray-100" : "text-white hover:bg-white/10"
+            }`}
             aria-label="Toggle menu"
           >
             {mobileOpen ? (
@@ -176,25 +195,21 @@ export default function Navbar() {
             mobileOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="bg-primary rounded-2xl px-4 py-3 space-y-1 shadow-xl">
+          <div className={`rounded-2xl px-4 py-3 space-y-1 shadow-xl ${scrolled ? "bg-white" : "bg-primary"}`}>
             {navItems.map((item, i) => (
               <div key={item.label}>
                 <button
                   onClick={() => setMobileExpanded(mobileExpanded === i ? null : i)}
-                  className="w-full flex items-center justify-between text-white/80 hover:text-white hover:bg-white/10 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors"
+                  className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${
+                    scrolled
+                      ? "text-gray-700 hover:bg-gray-100"
+                      : "text-white/80 hover:text-white hover:bg-white/10"
+                  }`}
                 >
                   {item.label}
                   {item.children && (
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      className={`transition-transform ${mobileExpanded === i ? "rotate-180" : ""}`}
-                    >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"
+                      className={`transition-transform ${mobileExpanded === i ? "rotate-180" : ""}`}>
                       <polyline points="6 9 12 15 18 9" />
                     </svg>
                   )}
@@ -206,7 +221,7 @@ export default function Navbar() {
                         key={child.label}
                         href={child.href}
                         onClick={() => setMobileOpen(false)}
-                        className="block text-white/60 hover:text-white py-1.5 text-sm transition-colors"
+                        className={`block py-1.5 text-sm transition-colors ${scrolled ? "text-gray-500 hover:text-primary" : "text-white/60 hover:text-white"}`}
                       >
                         {child.label}
                       </Link>
