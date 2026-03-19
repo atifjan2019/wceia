@@ -145,20 +145,20 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4">
         {/* Pill */}
         <div
-          className={`rounded-full px-3 flex items-center justify-between h-14 transition-all duration-300 ${
+          className={`rounded-full px-4 flex items-center justify-between h-14 transition-all duration-300 ${
             scrolled
-              ? "bg-white shadow-lg shadow-black/10"
+              ? "bg-white border border-gray-200 shadow-sm"
               : "bg-primary shadow-xl"
           }`}
         >
           {/* Logo */}
-          <Link href="/" className="flex items-center shrink-0 pl-1">
+          <Link href="/" className="flex items-center shrink-0">
             <Image
               src="/logo.png"
               alt="WCEIA Logo"
-              width={44}
-              height={44}
-              className="w-10 h-10 object-contain"
+              width={48}
+              height={48}
+              className="w-11 h-11 object-contain"
             />
           </Link>
 

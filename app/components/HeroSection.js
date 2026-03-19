@@ -7,7 +7,7 @@ export default function HeroSection() {
         style={{ backgroundImage: "url('/hero.webp')" }}
       />
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-primary/65" />
+      <div className="absolute inset-0 bg-black/55" />
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center pt-24">
