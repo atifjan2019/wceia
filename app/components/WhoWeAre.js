@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function WhoWeAre() {
   return (
     <section id="AboutUs" className="py-16 md:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-8 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Left — Text */}
@@ -32,36 +32,35 @@ export default function WhoWeAre() {
 
           {/* Right — Image + CEO card */}
           <div className="relative">
-            {/* Main Image */}
             <div className="rounded-xl overflow-hidden">
               <Image
                 src="/about-home.jpg"
                 alt="Who we are"
-                width={640}
-                height={480}
+                width={800}
+                height={600}
                 className="w-full object-cover"
               />
             </div>
 
-            {/* CEO Bio Card — overlaid at bottom right */}
-            <div className="absolute bottom-0 left-0 w-[260px] bg-primary rounded-xl p-5 shadow-2xl">
-              <p className="text-white/90 text-xs leading-relaxed mb-4">
+            {/* CEO Bio Card */}
+            <div className="absolute bottom-0 left-0 w-[300px] bg-primary rounded-xl p-6 shadow-2xl">
+              <p className="text-white/90 text-sm leading-relaxed mb-5">
                 Shahida Khanom, PhD was born and brought up in Bangladesh. She holds a PhD degree
                 in Tourism and Cultural Heritage from Griffith University, Australia.
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full overflow-hidden shrink-0 border-2 border-white">
+                <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 border-2 border-white">
                   <Image
                     src="/ceo.png"
                     alt="Shahida Khanom"
-                    width={40}
-                    height={40}
+                    width={48}
+                    height={48}
                     className="object-cover w-full h-full"
                   />
                 </div>
                 <div>
-                  <p className="text-white font-semibold text-sm">Shahida Khanom</p>
-                  <p className="text-white/70 text-xs">Founder and CEO</p>
+                  <p className="text-white font-bold text-base">Shahida Khanom</p>
+                  <p className="text-white/70 text-sm">Founder and CEO</p>
                 </div>
               </div>
             </div>
@@ -72,3 +71,4 @@ export default function WhoWeAre() {
     </section>
   );
 }
+

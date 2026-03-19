@@ -28,7 +28,7 @@ const features = [
 export default function WhatMakesUnique() {
   return (
     <section className="py-16 md:py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-8 lg:px-16">
         <div className="text-center mb-14">
           <p className="text-accent font-semibold text-sm tracking-widest uppercase mb-3">
             Our Difference

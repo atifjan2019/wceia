@@ -8,13 +8,13 @@ const coreLinks = [
 
 export default function CoreAreas() {
   return (
-    <section id="CoreAreas" className="bg-primary">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="CoreAreas" style={{ backgroundColor: "#0D3B6B" }}>
+      <div className="w-full px-4 sm:px-8 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center py-16 md:py-20">
           {/* Image */}
           <div className="rounded-2xl overflow-hidden shadow-2xl order-2 lg:order-1">
             <img
-              src="/about-home.jpg"
+              src="/coreareas.png"
               alt="Core areas of impact"
               className="w-full h-full object-cover aspect-square"
             />
